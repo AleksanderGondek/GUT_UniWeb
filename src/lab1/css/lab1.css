@@ -1,0 +1,47 @@
+html {
+    color: #C0C0C0;
+    background-color: #000000;
+}
+a:link {
+    color: #C0C0C0;
+}
+a:visited {
+    color: #C0C0C0;
+}
+a:hover {
+    color: #C0C0C0;
+}
+a:active {
+    color: #C0C0C0;
+}        
+.header {
+    height: 80px;
+    width: 80px;
+    background-color: #000000;
+    background-image: url('../img/dave.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: fixed;
+}
+.fancyLink {
+    background-color: #CC0000;
+    color: #C0C0C0 ;
+}
+.myh1 {
+    font-size: 18px;
+}
+.myh2 {
+    font-size: 16px;
+}
+.myh3 {
+    font-size: 14px;
+}
+.myh4 {
+    font-size: 12px;
+}
+.oddRow {
+    background-color: #660000;
+}
+.evenRow {
+    background-color: #CC0000;
+}
