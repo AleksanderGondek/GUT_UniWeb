@@ -13,7 +13,7 @@ module uniweb {
     export class TaskRepository implements ITaskRepository {
 
     	constructor() {
-            localStorage.removeItem(this.STORAGE_ID);
+            //localStorage.removeItem(this.STORAGE_ID);
     	}
         STORAGE_ID = 'uniweb-gondek-angularjs-typescript';
 

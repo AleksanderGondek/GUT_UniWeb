@@ -19,7 +19,6 @@ var uniweb;
     var TaskRepository = (function () {
         function TaskRepository() {
             this.STORAGE_ID = 'uniweb-gondek-angularjs-typescript';
-            localStorage.removeItem(this.STORAGE_ID);
         }
         TaskRepository.prototype.get = function () {
             return JSON.parse(localStorage.getItem(this.STORAGE_ID) || '[]');
@@ -48,10 +47,10 @@ var uniweb;
             this.$scope = $scope;
             this.$sce = $sce;
             this.taskRepository = taskRepository;
-            this.showHome = false;
+            this.showHome = true;
             this.showAllTasks = false;
             this.editSelectedTask = false;
-            this.addNewTasks = true;
+            this.addNewTasks = false;
             $scope.vm = this;
 
             this.tasks = $scope.tasks = taskRepository.get();
@@ -80,6 +79,13 @@ var uniweb;
         HomeCtrl.prototype.showAllTasksClick = function () {
             this.showHome = false;
             this.showAllTasks = true;
+            this.editSelectedTask = false;
+            this.addNewTasks = false;
+        };
+
+        HomeCtrl.prototype.showHomeClick = function () {
+            this.showHome = true;
+            this.showAllTasks = false;
             this.editSelectedTask = false;
             this.addNewTasks = false;
         };

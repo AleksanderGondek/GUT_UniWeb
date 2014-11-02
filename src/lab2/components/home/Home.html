@@ -59,7 +59,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-dashboard fa-fw"></i> Home</a>
+                            <a href="#" ng-click='home.showHomeClick()'><i class="fa fa-dashboard fa-fw"></i> Home</a>
                         </li>
                         <li>
                             <a href="#" ng-click='home.showAllTasksClick()'><i class="fa fa-bar-chart-o fa-fw"></i> Tasks<span class="fa arrow"></span></a>
@@ -135,7 +135,17 @@
             </div>
             <!-- /.row -->
             <div class='row' style='margin-top: 10px;' ng-show='home.showHome'>
-
+                <div class="col-lg-12">
+                    <h1>Narzedzia i biblioteki</h1>
+                    <ul>
+                        <li>Framework testowy <a href="http://qunitjs.com/">QUnit</a> lub <a href="http://jasmine.github.io/">jasmine </a></li>
+                        <li><a href="http://jquery.com/">JQuery</a>, <a href="http://jqueryui.com">JQuery UI</a>, <a href="http://getbootstrap.com/">Bootstrap</a></li>
+                        <li>do pisania mozna uzywac dowolnego edytora - warte uwagi sa np <a href="http://notepad-plus-plus.org/">NotePad++</a> lub edytor wbudowany w VS</li>
+                        <li>przydatne moze byc uzycie FireBug-a/Chrome developer tools</li>
+                        <li>do hostowania zadania dotyczacego wolan ajaxowych w JQuery mozna uzyc dowonej technologii - dostarczony przyklad opiera sie na <a href="http://nodejs.org">nodejs</a></li>
+                        <li>do testowania selektorow JQuery mozna uzyc on-lineowego <a href="http://www.w3schools.com/jquery/trysel.asp?filename=trysel_basic&jqsel=p.intro,%23choose">testera1</a> lub <a href="http://sk.kapsi.fi/interactive-jquery-tester.html">testera2</a> </li>
+                    </ul>
+                </div>
             </div>
             <!-- /.row -->
         </div>

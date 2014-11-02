@@ -22,10 +22,10 @@ module uniweb {
 
         public newTask: ToDoTask;
         public scoresModel: Array<number>;
-        public showHome: boolean = false;
+        public showHome: boolean = true;
         public showAllTasks: boolean = false;
         public editSelectedTask: boolean = false;
-        public addNewTasks: boolean = true;
+        public addNewTasks: boolean = false;
 
         // dependencies are injected via AngularJS $injector
         // controller's name is registered in Application.ts and specified from ng-controller attribute in index.html
@@ -71,6 +71,13 @@ module uniweb {
             this.showAllTasks = true;
             this.editSelectedTask = false;
             this.addNewTasks = false;
+        }
+
+        showHomeClick() {
+            this.showHome = true;
+            this.showAllTasks = false;
+            this.editSelectedTask = false;
+            this.addNewTasks = false;            
         }
     }
 }
