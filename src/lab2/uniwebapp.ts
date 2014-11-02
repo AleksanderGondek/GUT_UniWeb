@@ -1,0 +1,12 @@
+/// <reference path='references.ts' />
+
+module uniweb {
+    'use strict';
+
+    var uniwebapp = angular.module('uniwebapp', ['ngSanitize'])
+            .controller('homeCtrl', HomeCtrl)
+    		.service('taskRepository', TaskRepository);
+            //.directive('todoBlur', todoBlur)
+            // .directive('todoFocus', todoFocus)
+            //.service('todoStorage', TodoStorage);
+}

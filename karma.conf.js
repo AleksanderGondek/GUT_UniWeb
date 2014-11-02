@@ -15,7 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'C:/Users/Aleksander/Desktop/UniWeb/src/lab1/js/*.js',
+      'C:/Users/Aleksander/Desktop/UniWeb/src/lab1/js/jsMechanismsExamples.js',
       'C:/Users/Aleksander/Desktop/UniWeb/src/tests/*Spec.js'
     ],
 

@@ -43,16 +43,47 @@ module.exports = function(grunt) {
         },
         copy: {
             angularLibs: {
-                src: ['dependencies/angularjs-1.3.1/angular.min.js'],
+                src: ['dependencies/angularjs-1.3.1/*.js'],
                 dest: 'result/js',
                 mode: true,
                 timestamp: true,
                 expand: true,
                 flatten: true
             },
-            angularApp: {
-                src: ['src/typescript_output/*', 'src/'],
+            lab2Css: {
+                src: ['dependencies/sb-admin-2/css/bootstrap.min.css',
+                'dependencies/sb-admin-2/css/plugins/metisMenu/metisMenu.min.css',
+                'dependencies/sb-admin-2/css/sb-admin-2.css',
+                'dependencies/sb-admin-2/font-awesome-4.1.0/css/font-awesome.min.css'],
+                dest: 'result/css',
+                mode: true,
+                timestamp: true,
+                expand: true,
+                flatten: true
+            },
+            lab2Js: {
+                src: ['dependencies/sb-admin-2/js/jquery-1.11.0.js',
+                'dependencies/sb-admin-2/js/bootstrap.min.js',
+                'dependencies/sb-admin-2/js/plugins/metisMenu/metisMenu.min.js',
+                'dependencies/sb-admin-2/js/sb-admin-2.js'],
                 dest: 'result/js',
+                mode: true,
+                timestamp: true,
+                expand: true,
+                flatten: true
+            },
+            lab2Fonts: {
+                src: ['dependencies/sb-admin-2/font-awesome-4.1.0/fonts/fontawesome-webfont.woff',
+                'dependencies/sb-admin-2/font-awesome-4.1.0/fonts/fontawesome-webfont.ttf'],
+                dest: 'result/fonts',
+                mode: true,
+                timestamp: true,
+                expand: true,
+                flatten: true
+            },
+            lab2Page: {
+                src: ['src/lab2/components/home/*.html'],
+                dest: 'result',
                 mode: true,
                 timestamp: true,
                 expand: true,
@@ -101,9 +132,9 @@ module.exports = function(grunt) {
         },
         ts: {
             build: {
-                src: ['src/*.ts'],
-                reference: './src/reference.ts',
-                outDir: 'src/typescript_output',
+                src: ['src/lab2/*.ts'],
+                out: 'result/js/uniwebapp.js',
+                //outDir: 'src/typescript_output',
                 options: {
                     sourceMap: true,
                     declaration: false,
@@ -145,8 +176,9 @@ module.exports = function(grunt) {
     
     grunt.registerTask('test', ['karma:unit']);
     
-    grunt.registerTask('setUp-lab1files', ['copy:jQueryLibs', 'copy:lab1Page', 'copy:lab1Js', 'copy:lab1Css', 'copy:lab1Images']);
-    grunt.registerTask('host-lab1rest', ['execute:restServ']);
-    grunt.registerTask('host-lab1http', ['connect:httpserver']);
+    grunt.registerTask('setUp-lab1', ['copy:jQueryLibs', 'copy:lab1Page', 'copy:lab1Js', 'copy:lab1Css', 'copy:lab1Images']);
+    grunt.registerTask('setUp-lab2', ['ts-build', 'copy:angularLibs', 'copy:lab2Js', 'copy:lab2Fonts', 'copy:lab2Css', 'copy:lab2Page']);
+    grunt.registerTask('host-rest', ['execute:restServ']);
+    grunt.registerTask('host-http', ['connect:httpserver']);
     grunt.registerTask('host', ['configureProxies:server', 'connect:server']);
 };
