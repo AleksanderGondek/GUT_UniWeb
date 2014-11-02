@@ -6,8 +6,8 @@ var averageScoreDiv = '<label>Wynik</label><p class=\'averageScoreResult\'></p>'
 function addScoreDivs() {
 	$('h3').each(function(element) {
 		$(this).parent().children().filter('.giveScore').append(scoreDiv);
-		$(this).parent().children().filter('.averageScore').append(averageScoreDiv);
 	});
+	$('.averageScore').append(averageScoreDiv);
 };
 
 function getAverageScore() {

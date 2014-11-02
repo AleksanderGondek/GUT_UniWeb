@@ -7,7 +7,7 @@ function flyRight() {
 };
 
 
-var scoreDiv = '<label>Ocen</label><div class=\'btn-group\'><a href=\'#\' onclick=\'scoreIt(1,this)\' class=\'btn btn-default\'>1</a><a href=\'#\' onclick=\'scoreIt(2,this)\' class=\'btn btn-default\'>2</a><a href=\'#\' onclick=\'scoreIt(3,this)\' class=\'btn btn-default\'>3</a><a href=\'#\' onclick=\'scoreIt(4,this)\' class=\'btn btn-default\'>4</a><a href=\'#\' onclick=\'scoreIt(5,this)\' class=\'btn btn-default\'>4</a></div>';
+var scoreDiv = '<label>Ocen</label><div class=\'btn-group\'><a href=\'#\' onclick=\'scoreIt(1,this)\' class=\'btn btn-default\'>1</a><a href=\'#\' onclick=\'scoreIt(2,this)\' class=\'btn btn-default\'>2</a><a href=\'#\' onclick=\'scoreIt(3,this)\' class=\'btn btn-default\'>3</a><a href=\'#\' onclick=\'scoreIt(4,this)\' class=\'btn btn-default\'>4</a><a href=\'#\' onclick=\'scoreIt(5,this)\' class=\'btn btn-default\'>5</a></div>';
 var scoredDiv = '<label>Oceniono na</label>&nbsp;';
 var averageScoreDiv = '<label>Wynik</label><label class=\'averageScoreResult label label-info\'></label>';
 
