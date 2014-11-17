@@ -65,7 +65,7 @@
                             <a href="#" ng-click='home.showAllTasksClick()'><i class="fa fa-bar-chart-o fa-fw"></i> Tasks<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li ng-repeat='task in home.tasks track by task.title'>
-                                    <a href="#">{{task.title}}</a>
+                                    <a href="#" ng-click='home.editTask($index)'>{{task.title}}</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -148,6 +148,39 @@
                 </div>
             </div>
             <!-- /.row -->
+            <div class='row' style='margin-top: 10px;' ng-show='home.editSelectedTask'>
+                <div class='col-lg-12'>
+                    <div class='panel panel-default'>
+                        <div class="panel-heading">
+                            Edit task
+                        </div>
+                        <div class='panel-body'>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label>Title</label>
+                                            <input class="form-control" ng-model='home.selectedTask.title'>
+                                            <p class="help-block">Set task title</p>
+                                        </div>
+                                    </form>
+                                    <div class="form-group">
+                                        <label>Content</label>
+                                        <textarea class="form-control" rows="3" ng-model='home.selectedTask.content'></textarea>
+                                    </div>
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label>Score</label>
+                                            <select class="form-control" ng-model="home.selectedTask.score" ng-options="score for score in home.scoresModel">
+                                            </select>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- /#page-wrapper -->
 

@@ -55,6 +55,7 @@ var uniweb;
 
             this.tasks = $scope.tasks = taskRepository.get();
             this.newTask = $scope.newTask = new uniweb.ToDoTask('New Task', 'New Content', 0);
+            this.selectedTask = $scope.selectedTask = null;
             this.scoresModel = $scope.scoresModel = [0, 1, 2, 3, 4, 5];
         }
         HomeCtrl.prototype.onTasksChanges = function () {
@@ -67,6 +68,14 @@ var uniweb;
             this.tasks.push(this.newTask);
             this.newTask = this.$scope.newTask = new uniweb.ToDoTask('New Task', 'New Content', 0);
             this.taskRepository.put(this.tasks);
+        };
+
+        HomeCtrl.prototype.editTask = function (index) {
+            this.selectedTask = this.tasks[index];
+            this.showHome = false;
+            this.showAllTasks = false;
+            this.editSelectedTask = true;
+            this.addNewTasks = false;
         };
 
         HomeCtrl.prototype.showAddNewTasksClick = function () {

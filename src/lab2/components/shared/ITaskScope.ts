@@ -6,6 +6,7 @@ module uniweb {
 		tasks: Array<ToDoTask>;
 		scoresModel: Array<number>;
 		newTask: ToDoTask;
+		selectedTask: ToDoTask;
 		vm: HomeCtrl;
 	}
 }

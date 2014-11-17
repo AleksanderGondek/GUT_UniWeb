@@ -21,6 +21,7 @@ module uniweb {
         ];
 
         public newTask: ToDoTask;
+        public selectedTask: ToDoTask;
         public scoresModel: Array<number>;
         public showHome: boolean = true;
         public showAllTasks: boolean = false;
@@ -41,10 +42,11 @@ module uniweb {
 
             this.tasks = $scope.tasks = taskRepository.get();            
             this.newTask = $scope.newTask = new ToDoTask('New Task', 'New Content', 0);
+            this.selectedTask = $scope.selectedTask = null;
             this.scoresModel = $scope.scoresModel = [0,1,2,3,4,5];
 
             //$scope.$watch('tasks', () => this.onTasksChanges(), true);
-            //$scope.$watch('newTask.comments', () => this.onNewCommentChanges(), true);
+            //$scope.$watch('newTask.comments', () => this.WonNewCommentChanges(), true);
         }
 
         onTasksChanges() {
@@ -57,6 +59,23 @@ module uniweb {
             this.tasks.push(this.newTask);
             this.newTask = this.$scope.newTask = new ToDoTask('New Task', 'New Content', 0);
             this.taskRepository.put(this.tasks);
+        }
+
+        removeSelectedTask() {
+            this.selectedTask = this.tasks[index];
+            
+            this.showHome = true;
+            this.showAllTasks = false;
+            this.editSelectedTask = false;
+            this.addNewTasks = false;  
+        }
+
+        editTask(index) {
+            this.selectedTask = this.tasks[index];
+            this.showHome = false;
+            this.showAllTasks = false;
+            this.editSelectedTask = true;
+            this.addNewTasks = false;  
         }
 
         showAddNewTasksClick() {
