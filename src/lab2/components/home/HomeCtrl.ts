@@ -61,7 +61,7 @@ module uniweb {
             this.taskRepository.put(this.tasks);
         }
 
-        removeSelectedTask() {
+        removeSelectedTask(index) {
             this.selectedTask = this.tasks[index];
             
             this.showHome = true;

@@ -64,7 +64,7 @@
                         <li>
                             <a href="#" ng-click='home.showAllTasksClick()'><i class="fa fa-bar-chart-o fa-fw"></i> Tasks<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li ng-repeat='task in home.tasks track by task.title'>
+                                <li ng-repeat='task in home.tasks | filter:myCustomFilter track by task.title'>
                                     <a href="#" ng-click='home.editTask($index)'>{{task.title}}</a>
                                 </li>
                             </ul>
@@ -175,6 +175,7 @@
                                             </select>
                                         </div>
                                     </form>
+                                    <button type="submit" class="btn btn-default pull-right" ng-click='home.removeSelectedTask()'>Save</button>
                                 </div>
                             </div>
                         </div>

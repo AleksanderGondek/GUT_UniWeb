@@ -14,6 +14,15 @@ var uniweb;
 })(uniweb || (uniweb = {}));
 var uniweb;
 (function (uniweb) {
+    function myCustomFilter() {
+        return function (input) {
+            return input;
+        };
+    }
+    uniweb.myCustomFilter = myCustomFilter;
+})(uniweb || (uniweb = {}));
+var uniweb;
+(function (uniweb) {
     
 
     var TaskRepository = (function () {
@@ -70,6 +79,15 @@ var uniweb;
             this.taskRepository.put(this.tasks);
         };
 
+        HomeCtrl.prototype.removeSelectedTask = function (index) {
+            this.selectedTask = this.tasks[index];
+
+            this.showHome = true;
+            this.showAllTasks = false;
+            this.editSelectedTask = false;
+            this.addNewTasks = false;
+        };
+
         HomeCtrl.prototype.editTask = function (index) {
             this.selectedTask = this.tasks[index];
             this.showHome = false;
@@ -111,6 +129,6 @@ var uniweb;
 (function (uniweb) {
     'use strict';
 
-    var uniwebapp = angular.module('uniwebapp', ['ngSanitize']).controller('homeCtrl', uniweb.HomeCtrl).service('taskRepository', uniweb.TaskRepository);
+    var uniwebapp = angular.module('uniwebapp', ['ngSanitize']).controller('homeCtrl', uniweb.HomeCtrl).service('taskRepository', uniweb.TaskRepository).filter("myCustomFilter", uniweb.myCustomFilter);
 })(uniweb || (uniweb = {}));
 //# sourceMappingURL=uniwebapp.js.map

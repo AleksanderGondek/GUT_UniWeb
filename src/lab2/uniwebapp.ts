@@ -5,7 +5,8 @@ module uniweb {
 
     var uniwebapp = angular.module('uniwebapp', ['ngSanitize'])
             .controller('homeCtrl', HomeCtrl)
-    		.service('taskRepository', TaskRepository);
+    		.service('taskRepository', TaskRepository)
+    		.filter("myCustomFilter", myCustomFilter);
             //.directive('todoBlur', todoBlur)
             // .directive('todoFocus', todoFocus)
             //.service('todoStorage', TodoStorage);
